@@ -1,6 +1,5 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+
 
 
 <h3>AIM:</h3>
@@ -40,3 +39,53 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
+<h3>Delveloping by :<h3>
+  <h4>Name : Kanigavel M <h4>
+    <h4>Reg.No: 212224240070 <h4>
+<H3>Program :</H3>
+    
+    import random
+    num_rooms = 5   
+    rooms = [f"Room {i+1}" for i in range(num_rooms)]
+
+
+    patients = {}
+    for room in rooms:
+        patients[room] = round(random.uniform(97.0, 102.0), 1)
+
+    performance = 0
+    agent_location = rooms[0] 
+
+    def prescribe_medicine(temp):
+        """Check if patient is unhealthy and prescribe medicine"""
+        return temp > 98.5
+
+    print(" Medicine Prescribing Agent Simulation ")
+    print("------------------------------------------------")
+
+    for i, room in enumerate(rooms):
+        print(f"\nAgent is in {room}")
+        temp = patients[room]
+        print(f"Patient temperature: {temp}°F")
+    
+        if prescribe_medicine(temp):
+            print("Patient is unhealthy : Medicine prescribed ")
+            performance += 1
+        else:
+            print("Patient is healthy : No medicine needed ")
+    
+   
+        if i < len(rooms) - 1:
+            next_room = rooms[i+1]
+            print(f"Agent moving from {room} to {next_room}...")
+            performance -= 1
+            agent_location = next_room
+
+    print("\n------------------------------------------------")
+    print(" Simulation Completed")
+    print(f" Final Performance Score: {performance}")
+
+<H3>Output :</H3>
+<img width="736" height="744" alt="image" src="https://github.com/user-attachments/assets/d8a41751-4f74-4cfc-a8d2-a0c9b39ba601" />
+<h3>Result :</h3>
+The Python program for Developing AI Agent with PEAS Description was executed successfully.
